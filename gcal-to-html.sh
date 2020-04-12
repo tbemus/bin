@@ -18,7 +18,7 @@ rm $html_out
 trap gcal_cleanup exit
 
 #get the current agenda
-gcalcli --cal kbemus@gmail.com --nocolor agenda >> $gcal_out
+gcalcli --cal xxxx@gmail.com --nocolor agenda >> $gcal_out
 sed -i ':a;N;$!ba;s/\n/<br> /g;s/             /\&nbsp\; \&nbsp\; /g;s/          /<br>\&nbsp\; \&nbsp\; /g;s/   /<br>\&nbsp\; \&nbsp\; /g' $gcal_out
 #sed -i ':a;N;$!ba;s/\n/<br> /g' $gcal_out
 
