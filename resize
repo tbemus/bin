@@ -1,0 +1,19 @@
+#!/bin/sh 
+
+for picture in `find -name "*.[jJ][pP][gG]"` 
+do 
+W=`identify -format "%w" $picture` 
+H=`identify -format "%h" $picture` 
+
+echo $picture
+echo $W 
+echo $H 
+   if [ "$W" -gt "$H" ] 
+        then 
+                # echo "Horizontal" 
+                convert -resize '800x600>' ${picture} small-"${picture##*/}"
+        else 
+                # echo "Vertical" 
+                convert -resize '600x800>' ${picture} small-"${picture##*/}"
+        fi 
+done

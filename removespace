@@ -1,0 +1,10 @@
+#!/bin/bash
+for i in `find . -name '* *' | cut -c3- |tr -d '/' | tr ' ' '~'`;
+do
+echo $i;
+file1=`echo "$i" | tr '~' '\ '`;
+file2=`echo "$i" | tr '~' '_'`;
+echo $file1;
+echo $file2;
+mv -f "$file1" $file2;
+done
