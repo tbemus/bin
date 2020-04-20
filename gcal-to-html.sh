@@ -17,7 +17,7 @@ rm $html_out
 trap gcal_cleanup exit
 
 #get the current agenda
-gcalcli --cal kbemus@gmail.com --nocolor agenda "`date +%F`" "`date -d "+7 days" +%F`" >> $gcal_out
+gcalcli --cal xxxx@gmail.com --nocolor agenda "`date +%F`" "`date -d "+7 days" +%F`" >> $gcal_out
 sed -i ':a;N;$!ba;s/\n/<br> /g;s/             /\&nbsp\; \&nbsp\; /g;s/          /<br>\&nbsp\; \&nbsp\; /g;s/   /<br>\&nbsp\; \&nbsp\; /g' $gcal_out
 sed -i -e :a -e 's/\([0-9]\)  \([0-9]\)/\1 <br>\&nbsp\; \&nbsp\; \2/;ta' $gcal_out
 
